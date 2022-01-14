@@ -7,7 +7,7 @@ import java.util.Objects;
 public class ShoppingCart {
     private List<Collection<Integer>> shoppingCart;
 
-    public ShoppingCart(List<Collection<Integer>> shoppingCart) {
+    public ShoppingCart() {
         this.shoppingCart = shoppingCart;
     }
 

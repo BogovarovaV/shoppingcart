@@ -18,9 +18,9 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/add")
-    public String addItem(@RequestParam Collection<Integer> itemId) {
-        shoppingCartService.addItem(itemId);
-        return "Товар(ы) " + itemId + " добавлен(ы) в корзину.";
+    public String addItem(@RequestParam Collection orderItems) {
+        shoppingCartService.addItem(orderItems);
+        return "Товар(ы) " + orderItems + " добавлен(ы) в корзину.";
     }
 
     @GetMapping("/get")
