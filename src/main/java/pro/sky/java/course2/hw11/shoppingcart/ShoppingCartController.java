@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/order")
@@ -18,13 +18,13 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/add")
-    public String addItem(@RequestParam Collection orderItems) {
+    public String addItem(@RequestParam Integer orderItems) {
         shoppingCartService.addItem(orderItems);
         return "Товар(ы) " + orderItems + " добавлен(ы) в корзину.";
     }
 
     @GetMapping("/get")
-    public String getItems() {
+    public Map<Integer, Integer> getItems() {
         return shoppingCartService.getItems();
     }
 }

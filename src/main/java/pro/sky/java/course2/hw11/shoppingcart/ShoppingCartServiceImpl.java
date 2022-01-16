@@ -1,30 +1,33 @@
 package pro.sky.java.course2.hw11.shoppingcart;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Service
-@Scope("singleton")
 public class ShoppingCartServiceImpl implements ShoppingCartService{
 
-    private final List<Collection<Integer>> shoppingCart = new ArrayList<>();
+    private final ShoppingCart shoppingCart;
 
-
-    @Override
-    public void addItem(Collection<Integer> itemId) {
-        if (itemId == null) {
-            throw new BadRequestException();
-        } else {
-            shoppingCart.add(itemId);
-        }
+    public ShoppingCartServiceImpl(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 
     @Override
-    public String getItems() {
-        return shoppingCart.toString();
+    public void addItem(Integer orderItems) {
+        List<Integer> itemsIdList = new ArrayList<>();
+        for (Integer id : itemsIdList) {
+            if (shoppingCart.getShoppingCart().containsKey(id)) {
+                shoppingCart.getShoppingCart().put(id, shoppingCart.getShoppingCart().get(id) + 1);
+            } else {
+                shoppingCart.getShoppingCart().put(id, 1);
+            }
+        }
+
+    }
+
+    @Override
+    public Map<Integer, Integer> getItems() {
+        return shoppingCart.getShoppingCart();
     }
 }

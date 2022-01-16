@@ -1,21 +1,20 @@
 package pro.sky.java.course2.hw11.shoppingcart;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ShoppingCart {
-    private List<Collection<Integer>> shoppingCart;
+    private Map<Integer, Integer> shoppingCart;
 
     public ShoppingCart() {
         this.shoppingCart = shoppingCart;
     }
 
-    public List<Collection<Integer>> getShoppingCart() {
+    public Map<Integer, Integer> getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(List<Collection<Integer>> shoppingCart) {
+    public void setShoppingCart(Map<Integer, Integer> shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 
