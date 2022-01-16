@@ -14,15 +14,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
     }
 
     @Override
-    public void addItem(Integer orderItems) {
-        List<Integer> itemsIdList = new ArrayList<>();
-        for (Integer id : itemsIdList) {
-            if (shoppingCart.getShoppingCart().containsKey(id)) {
-                shoppingCart.getShoppingCart().put(id, shoppingCart.getShoppingCart().get(id) + 1);
-            } else {
-                shoppingCart.getShoppingCart().put(id, 1);
-            }
-        }
+    public void addItem(Integer orderItems, Integer quantity) {
+//            if (shoppingCart.getShoppingCart().containsKey(orderItems)) {
+//                shoppingCart.getShoppingCart().put(orderItems, shoppingCart.getShoppingCart().get(orderItems) + quantity);
+//            } else {
+                shoppingCart.getShoppingCart().put(orderItems, quantity);
+//            }
 
     }
 

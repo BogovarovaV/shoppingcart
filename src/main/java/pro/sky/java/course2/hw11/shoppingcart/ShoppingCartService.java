@@ -4,6 +4,6 @@ import java.util.Map;
 
 public interface ShoppingCartService {
 
-    void addItem (Integer orderItems);
+    void addItem (Integer orderItems, Integer quantity);
     Map<Integer, Integer> getItems ();
 }
