@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -18,9 +19,9 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/add")
-    public String addItem(@RequestParam Integer orderItems, Integer quantity) {
-        shoppingCartService.addItem(orderItems, quantity);
-        return "Товар(ы) " + orderItems + " в количестве" + quantity + " шт. добавлен(ы) в корзину.";
+    public String addItem(@RequestParam List<Integer> orderItems) {
+        shoppingCartService.addItem(orderItems);
+        return "Товар(ы) " + orderItems + " добавлен(ы) в корзину.";
     }
 
     @GetMapping("/get")

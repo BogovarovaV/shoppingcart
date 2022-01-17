@@ -14,13 +14,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
     }
 
     @Override
-    public void addItem(Integer orderItems, Integer quantity) {
-//            if (shoppingCart.getShoppingCart().containsKey(orderItems)) {
-//                shoppingCart.getShoppingCart().put(orderItems, shoppingCart.getShoppingCart().get(orderItems) + quantity);
-//            } else {
-                shoppingCart.getShoppingCart().put(orderItems, quantity);
-//            }
-
+    public void addItem(List<Integer> orderItems) {
+        Map<Integer, Integer> currentCart = shoppingCart.getShoppingCart();
+        orderItems.stream().forEach(i -> currentCart.put (i, currentCart.getOrDefault(i, 0) + 1));
     }
 
     @Override

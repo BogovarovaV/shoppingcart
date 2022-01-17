@@ -1,5 +1,6 @@
 package pro.sky.java.course2.hw11.shoppingcart;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -7,8 +8,7 @@ public class ShoppingCart {
     private Map<Integer, Integer> shoppingCart;
 
     public ShoppingCart() {
-        this.shoppingCart = shoppingCart;
-    }
+        this.shoppingCart = new HashMap<>();}
 
     public Map<Integer, Integer> getShoppingCart() {
         return shoppingCart;
